@@ -1,0 +1,215 @@
+@import './globals/boilerplate';
+@import './globals/typography';
+@import './utils/fonts';
+@import './utils/resuable';
+
+header {
+    background-image: linear-gradient(to right, rgba(0,0,0,1) 20%,rgba(0,0,0,.1) 55%), url('../../scss/image/showmax.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nav {
+    @include flexSpace(space-between);
+    padding: 1rem 0;
+    transition: .5s all ease-in;
+    height: 60px;
+
+    &.sticky {
+        padding: 15px 20px;
+    }
+
+    .flex {
+        display: flex;
+        width: 57%;
+        @include flexSpace(space-between);
+    }
+    
+
+    .nav__list {
+        @include flexCenter;
+        font-size: 1.2rem;
+        gap: 4rem;
+        @include font-weight(semi-bold);
+
+        &-item {
+            .active {
+                background-color: #fff;
+                color: #000;
+                padding: 1.2rem;
+                border-radius: 50px;
+            }
+        }
+    }
+
+    .cta__btn {
+        display: flex;
+        gap: 2rem;
+        height: 4rem;
+        margin-right: 4rem;
+    
+
+        &-btn1 {
+            border: none;
+            outline: none;
+            width: 90px;
+            font-weight: 700;
+            border-radius: 50px;
+        }
+
+        &-btn2 {
+            @extend .cta__btn-btn1;
+            color: #fff;
+        }
+
+        &-btn2 {
+            background-color: transparent;
+            border: 2px solid #fff;
+            @include flexCenter;
+            gap: 1.2rem;
+            width: 110px;
+        }
+    }
+
+   
+}
+
+aside  {
+    display: flex;
+    flex-flow: column wrap;
+    position: absolute;
+    bottom: -3rem;
+    margin: 6rem;
+
+    img {
+        width: 250px;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        color: #fff;
+        @include font-weight(bold);
+        font-size: 1.4rem
+    }
+
+    p {
+        @extend h3;
+        @include font-weight(medium);
+        line-height: 1.5;
+        width: 400px;
+        margin-bottom: 2rem;
+    }
+
+    .cta__btn {
+        display: flex;
+        gap: 2rem;
+        height: 4rem;
+
+        &-btn1 {
+            outline: 0;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.6rem;
+            padding: 0 2rem;
+        }
+
+        &-btn2 {
+            @extend .cta__btn-btn1;
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            transition: all ease .5s;
+
+            &:hover {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+    header {
+        height: 30vh;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0%;
+            background-image: linear-gradient(to top, rgba(0,0,0,1) 65%,rgba(0,0,0,.1) 80%);
+            height: 100vh;
+            width: 100vw;
+            z-index: -1;
+        }
+
+        .flex {
+            margin-left: 7rem;
+        }
+
+        .nav__list {
+            flex-direction: column;   
+            background-color: green;
+            width: 97%;
+            margin: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 1.7rem;
+            padding: 2.5rem 0;
+            top: -100%;
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        nav .cta__btn-btn1 {
+            display: none;
+        }
+
+    
+        aside {
+    
+            top: 20%;
+            margin: 0 1.2rem;
+
+            img {
+                width: 60px;
+            }
+    
+            h3 {
+                font-size: 1.3rem;
+            }
+    
+            p {
+                width: 100%;
+            }
+
+            .cta__btn {
+                &-btn1 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    
+}

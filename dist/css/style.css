@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+.logo {
+  width: 200px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+h1, h2, h3, aside p {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+img {
+  width: 100%;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+  outline: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3, aside p, h4, h5, h6 {
+  margin: 1rem 0;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+header {
+  background-image: linear-gradient(to right, black 20%, rgba(0, 0, 0, 0.1) 55%), url("../../scss/image/showmax.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  transition: .5s all ease-in;
+  height: 60px;
+}
+
+.nav.sticky {
+  padding: 15px 20px;
+}
+
+.nav .flex {
+  display: flex;
+  width: 57%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .nav__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 4rem;
+  font-weight: 600;
+}
+
+.nav .nav__list-item .active {
+  background-color: #fff;
+  color: #000;
+  padding: 1.2rem;
+  border-radius: 50px;
+}
+
+.nav .cta__btn {
+  display: flex;
+  gap: 2rem;
+  height: 4rem;
+  margin-right: 4rem;
+}
+
+.nav .cta__btn-btn1, .nav .cta__btn-btn2 {
+  border: none;
+  outline: none;
+  width: 90px;
+  font-weight: 700;
+  border-radius: 50px;
+}
+
+.nav .cta__btn-btn2 {
+  color: #fff;
+}
+
+.nav .cta__btn-btn2 {
+  background-color: transparent;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  width: 110px;
+}
+
+aside {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  bottom: -3rem;
+  margin: 6rem;
+}
+
+aside img {
+  width: 250px;
+  margin-bottom: 1.5rem;
+}
+
+aside h3, aside p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+aside p {
+  font-weight: 500;
+  line-height: 1.5;
+  width: 400px;
+  margin-bottom: 2rem;
+}
+
+aside .cta__btn {
+  display: flex;
+  gap: 2rem;
+  height: 4rem;
+}
+
+aside .cta__btn-btn1, aside .nav .cta__btn-btn2, .nav aside .cta__btn-btn2, aside .cta__btn-btn2 {
+  outline: 0;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.6rem;
+  padding: 0 2rem;
+}
+
+aside .cta__btn-btn2 {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all ease .5s;
+}
+
+aside .cta__btn-btn2:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 30vh;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    background-image: linear-gradient(to top, black 65%, rgba(0, 0, 0, 0.1) 80%);
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
+  header .flex {
+    margin-left: 7rem;
+  }
+  header .nav__list {
+    flex-direction: column;
+    background-color: green;
+    width: 97%;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.7rem;
+    padding: 2.5rem 0;
+    top: -100%;
+  }
+  header .logo {
+    width: 150px;
+  }
+  header nav .cta__btn-btn1, header nav .nav .cta__btn-btn2, .nav header nav .cta__btn-btn2, header nav aside .cta__btn-btn2, aside header nav .cta__btn-btn2 {
+    display: none;
+  }
+  header aside {
+    top: 20%;
+    margin: 0 1.2rem;
+  }
+  header aside img {
+    width: 60px;
+  }
+  header aside h3, header aside p {
+    font-size: 1.3rem;
+  }
+  header aside p {
+    width: 100%;
+  }
+  header aside .cta__btn-btn1, header aside .nav .cta__btn-btn2, .nav header aside .cta__btn-btn2, header aside .cta__btn-btn2 {
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
